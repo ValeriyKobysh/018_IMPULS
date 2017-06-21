@@ -1,0 +1,6 @@
+{
+  "name": "IMPULS",
+  "dependencies": {
+    "typings": "^2.1.1"
+  }
+}
