@@ -1,0 +1,26 @@
+extends ../_templates/_main 
+
+mixin input(label, type)
+    label.s-profile__lbl #{label}
+    input.s-profile__field.field(type=type)
+
+block title
+    title Ваш профиль
+block append css
+block variables
+    - var pageName = "Profile"
+    - var mainHeading = "Настройки профиля:"
+block content
+    section.s-profile.flex-container
+        form.s-profile__form.flex-container.flex-col
+            h3.s-profile__heading Изменить пароль:
+            +input("Старый пароль", "password")
+            +input("Новый пароль", "password")
+            +input("Повторите пароль", "password")
+            button.btn.btn_purple.btn_md.btn_shadow Изменить пароль
+        form.s-profile__form.flex-container.flex-col
+            h3.s-profile__heading Изменить e-mail:
+            +input("Введите e-mail", "email")
+            +input("Повторите e-mail", "email")
+            button.btn.btn_purple.btn_md.btn_shadow Изменить e-mail
+block append js

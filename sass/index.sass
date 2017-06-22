@@ -8,7 +8,14 @@
 @import  "_column/_column"
 @import "_hide/_hide"
 @import "_btn/_btn"
+@import "_content/_content"
+@import "_main-content/_main-content"
+@import "_field/_field"
 @import "../_blocks/_dialog/_dialog"
+@import "../_blocks/_header-page/_header-page"
+@import "../_blocks/_navbar/_navbar"
+@import "../_blocks/_s-profile/_s-profile"
+@import "../_blocks/_footer-page/_footer-page"
 
 @include media-breakpoint-up($xs)
     
@@ -16,12 +23,16 @@
 @include media-breakpoint-up($sm)  
 
 // Medium devices (tablets, 768px and up)
-@include media-breakpoint-up($md)  
+@include media-breakpoint-up($md)
+    @import "_field/_field_md_to_xl"
+    @import "../_blocks/_footer-page/_footer-page_md_to_xl" 
 
 // Large devices (desktops, 992px and up)
-@include media-breakpoint-up($lg)  
+@include media-breakpoint-up($lg)
+    @import "../_blocks/_header-page/_header-page_lg_to_xl"
+    @import "../_blocks/_footer-page/_footer-page_lg_to_xl" 
     
- // Extra large devices (large desktops, 1200px and up)
+// Extra large devices (large desktops, 1200px and up)
 @include media-breakpoint-up($xl) 
     @import "_container/_container_xl"
     @import "_flex/_flex_xl"
@@ -30,6 +41,7 @@
     @import  "_column/_column_xl"
     @import "_hide/_hide_xl"
     @import "_btn/_btn_xl"
+    @import "../_blocks/_footer-page/_footer-page_xl"
 
 //=====================================================
 
@@ -45,12 +57,21 @@
     @import  "_column/_column_xs"
     @import "_hide/_hide_xs"
     @import "_btn/_btn_xs"
+    @import "../_blocks/_header-page/_header-page_xs"
+    @import "_main-content/_main-content_xs"
+    @import "../_blocks/_footer-page/_footer-page_xs"
 
 // Medium devices (tablets, less than 768px)
-@include media-breakpoint-down($md)  
+@include media-breakpoint-down($md)
+    @import "../_blocks/_footer-page/_footer-page_xs_to_md"
+    @import "_field/_field_xs_to_md"
+    @import "../_blocks/_s-profile/_s-profile_xs_to_md"
 
 // Large devices (desktops, less than 992px)
 @include media-breakpoint-down($lg)
+    @import "../_blocks/_header-page/_header-page_xs_to_lg"
+    @import "../_blocks/_navbar/_navbar_xs_to_lg"
+    @import "../_blocks/_footer-page/_footer-page_xs_to_lg"
 
 // Extra large devices (desktops, less than 1200px)
 @include media-breakpoint-down($lg)  
@@ -66,6 +87,7 @@
     @import  "_column/_column_lg"
     @import "_hide/_hide_lg"
     @import "_btn/_btn_lg"
+    @import "../_blocks/_footer-page/_footer-page_lg"
 
 // Apply styles starting from medium devices(768px) and up to large devices(992px)
 @include media-breakpoint-between($md, $lg)
@@ -76,6 +98,8 @@
     @import  "_column/_column_md"
     @import "_hide/_hide_md"
     @import "_btn/_btn_md"
+    @import "../_blocks/_header-page/_header-page_md"
+    @import "../_blocks/_footer-page/_footer-page_md"
 
 // Apply styles starting from small devices(576px) and up to medium devices(768px)
 @include media-breakpoint-between($sm, $md) 
@@ -86,7 +110,12 @@
     @import  "_column/_column_sm"
     @import "_hide/_hide_sm"
     @import "_btn/_btn_sm"
+    @import "../_blocks/_footer-page/_footer-page_sm"
 
 // Apply styles starting from extra small devices(360px) and up to small devices(576px)
 @include media-breakpoint-between($xs, $sm) 
+
+// Apply styles starting from extra small devices(576px) and up to large devise(992px)
+@include media-breakpoint-between($sm, $lg) 
+    @import "../_blocks/_header-page/_header-page_sm_to_md"
 

@@ -42,3 +42,13 @@
             return this.each(make);
         }
     })(jQuery)
+
+//###Mobile menu###
+    $('.header-page__mobile').click(function(){
+        let _this = $(this),
+            button = _this.children(),
+            navbar = $('.navbar');
+
+        button.toggleClass('active');
+        navbar.toggleClass('active');
+    });

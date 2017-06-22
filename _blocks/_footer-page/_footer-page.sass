@@ -1,0 +1,33 @@
+.footer-page
+    background-color: $footerColor
+    &__left, &__right, &__support
+        display: flex
+        align-items: center
+    &__left
+        flex-direction: column
+        justify-content: center
+    &__container
+        height: 100%
+        display: flex
+        justify-content: space-between
+    &__logo
+        max-width: 300px
+        max-height: 60px
+        margin-bottom: 15px
+    &__copyright
+        color: $red
+        letter-spacing: 1.2px
+    &__support
+        color: $white
+        text-transform: uppercase
+        +transition(color)
+        letter-spacing: 1.2px
+        &:hover, &:active
+            color: $red
+    &__icon
+        fill: $red
+        margin-right: 12px
+        &_lg
+            height: 27px
+        &_md
+            height: 21px

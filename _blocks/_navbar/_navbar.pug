@@ -1,0 +1,40 @@
+mixin navbarMenu(title, link, islink, page)
+    li.navbar__item.flex-container.ai-center(class={active: page === pageName})
+        - if(islink)
+            a.navbar__link.flex-container.ai-center.link(href=link) #{title}
+        - else
+            | Ваш баланс:&nbsp;
+            span.navbar__amount 1200
+            | &nbsp;руб
+
+aside.navbar
+    .navbar__logo.flex-container.ai-center.jc-center
+        img(src="img/navbar__logo.png", alt="")
+    ul.navbar__list.list
+            +navbarMenu(null, null, false, null)
+            +navbarMenu("Пополнить баланс", "cashin.html", true, "Cashin")
+            +navbarMenu("Вывести средства", "cachout.html", true, "Cashout")
+            +navbarMenu("Ваш профиль", "profile.html", true, "Profile")
+            +navbarMenu("Статистика системы", "statistic.html", true, "Statistic")
+    ul.navbar__data-list.list
+        li.navbar__data-item.flex-container.flex-col.ai-center.jc-center
+            svg.navbar__data-icon(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 127.7 612 535.8" xml:space="preserve")
+                use(xlink:href="#users-icon")
+            span.navbar__data-text
+                span.navbar__data-mark 5662&nbsp;
+                | чел&nbsp;
+            span.navbar__data-text участников
+        li.navbar__data-item.flex-container.flex-col.ai-center.jc-center
+            svg.navbar__data-icon(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" xml:space="preserve")
+                use(xlink:href="#card-icon")
+            span.navbar__data-text
+                span.navbar__data-mark 5 546 682&nbsp;
+                | руб.&nbsp;
+            span.navbar__data-text заработано участниками
+        li.navbar__data-item.flex-container.flex-col.ai-center.jc-center
+            svg.navbar__data-icon(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 95.3 612 601.4" xml:space="preserve")
+                use(xlink:href="#calendar-icon")
+            span.navbar__data-text
+                span.navbar__data-mark 89-й&nbsp;
+                | день&nbsp;
+            span.navbar__data-text сервис работает

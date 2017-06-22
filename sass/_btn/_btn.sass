@@ -1,16 +1,35 @@
 .btn
     color: $white
     font-size: rem(14px)
+    display: flex
+    justify-content: center
+    align-items: center
+    letter-spacing: 1.1px
+    border-radius: 15px
+    border: 0
+    cursor: pointer
+    +transition()
+    outline: none
     //### Color
     &_grey
         background-color: $grey
+        &:hover, &:active
+            background-color: $purple
     &_red
         background-color: $red
+        &:hover, &:active
+            background-color: $purple
     &_purple
         background-color: $purple
+        &:hover, &:active
+            background-color: $red
     //### Size
     &_lg
+        +size(100%, 55px)
     &_md
+        +size(100%, 45px)
     &_sm
+        +size(84px, 35px)
     //### Effect
     &_shadow
+        box-shadow: 0 3px 5px 0 rgba($black, 0.4)

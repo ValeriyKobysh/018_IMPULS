@@ -1,0 +1,65 @@
+.header-page
+    &_inner
+        background-image: linear-gradient(11deg, $red, $purple 50%, $violet)
+    &__container, &__left, &__right, &__support
+        display: flex
+    &__container
+        justify-content: space-between
+        height: 100%
+    &__right
+    &__link
+        color: $white
+        font-size: rem(14px)
+        letter-spacing: 1.1px
+        +transition(color)
+        &:hover, &:active
+            color: $red
+    &__support
+        @extend .footer-page__support
+        &:active, &:hover        
+            .header-page__icon
+                fill: $red
+    &__icon
+        margin-right: 12px
+        fill: $white
+        +transition(fill)
+        &_lg
+            @extend .footer-page__icon_lg
+        &_md
+            @extend .footer-page__icon_md
+    &__mobile
+        border: 0
+        background-color: transparent
+        +size(40px)
+        margin-left: 25px
+        outline: none
+        cursor: pointer
+        & > span, & > span:before, & > span:after
+            display: block
+            +size(40px, 3px)
+        & > span
+            position: relative
+            background-color: rgba($white, 1)
+            transition: all 0ms 300ms
+            &.active
+                background-color: rgba($white, 0)
+                &:before
+                    bottom: 0
+                    transform: rotate(-45deg)
+                    transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+                &:after
+                    top: 0
+                    transform: rotate(45deg)
+                    transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+        & > span:before, & > span:after
+            content: ""
+            position: absolute
+            left: 0
+            background-color: rgba($white, 1)
+        & > span:before
+            bottom: 12px
+            transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+        & > span:after
+            top: 12px
+            transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+        

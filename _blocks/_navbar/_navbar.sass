@@ -1,0 +1,50 @@
+.navbar
+    width: 264px
+    background-image: linear-gradient(27deg, $violet, $purple 50%, $red)
+    flex-shrink: 0
+    margin-right: 15px
+    &__logo
+        height: 100px
+        border-bottom: 1px solid $white
+    &__item
+        padding: 0 12px
+        height: 75px
+        border-left: 6px solid transparent
+        +transition()
+        &.active, &:hover, &:active
+            border-left-color: $white
+            font-weight: 700
+            background-color: rgba($white, .1)
+        &:first-child
+            &:hover, &:active
+                border-left-color: transparent
+                background-color: transparent
+                font-weight: 400
+    &__item, &__link
+        color: $white
+    &__link
+        +size(100%, 75px)
+        letter-spacing: 1.4px
+    &__data
+        &-item
+            height: 135px
+            position: relative
+            &:before
+                content: ""
+                +size(260px, 1px)
+                background-color: rgba($white, .55)
+                position: absolute
+                top: 0
+                left: 2.5px
+        &-icon
+            fill: rgba($white, .15)
+            height: 50%
+            position: absolute
+        &-text
+            color: $white
+            letter-spacing: 1.2px
+            display: block
+            margin: 7.5px 0
+        &-mark
+            font-weight: 700
+            font-size: rem(18px)
